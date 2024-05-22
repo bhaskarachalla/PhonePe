@@ -15,7 +15,7 @@ mydb = psycopg2.connect(host = 'localhost',
 
 cursor = mydb.cursor()
 
-#aggre_transaction DF
+#Data Frames for diiferent categories
 cursor.execute('SELECT * FROM aggregated_transaction')
 mydb.commit()
 Table1 = cursor.fetchall()
