@@ -4,7 +4,7 @@ import pandas as pd
 import json
 import requests
 import plotly.express as px
-from PIL import Image
+from PIL import Image        #PIL = Python Image Library
 from streamlit_option_menu import option_menu
 
 mydb = psycopg2.connect(host = 'localhost',
@@ -15,7 +15,7 @@ mydb = psycopg2.connect(host = 'localhost',
 
 cursor = mydb.cursor()
 
-#Data Frames for diiferent categories
+#Data Frames for different categories
 cursor.execute('SELECT * FROM aggregated_transaction')
 mydb.commit()
 Table1 = cursor.fetchall()
@@ -233,6 +233,7 @@ def Aggre_User_plot2(df, quartile):
     return AgUYQ
 
 def Aggre_User_plot3(df, state):
+    
     AgU_Year_Q_S = df[df['States'] == state]
     AgU_Year_Q_S.reset_index(drop=True, inplace= True )
     
